@@ -1,0 +1,20 @@
+void solution344_0(vector<char> &s);
+string solution541_0(string s, int k);
+string solution151_0(string s);
+string solution151_1(string s);
+vector<int> get_next0(string needle);
+vector<int> get_next1(string needle);
+vector<int> get_next2(string needle);
+vector<int> get_next3(string needle);
+int solution28_0 (string haystack, string needle);
+int solution28_1 (string haystack, string needle);
+int solution28_2 (string haystack, string needle);
+bool solution459_0(string s);
+
+int test();
+
+
+bool solution1657_0(string word1, string word2);
+
+
+

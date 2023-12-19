@@ -1,0 +1,92 @@
+#include <vector>
+#include <queue>
+#include <algorithm>
+#include "TreeNode"
+
+
+using namespace std;
+
+class Solution257 {
+    vector<string>ans;
+public:
+    void recur257_0(TreeNode* root) {
+        static vector<int>vec;
+        vec.push_back(root->val);
+        if (!(root->left || root->right)) {
+            int size = vec.size();
+            string str;
+            for (int i = 0; i < size; ++ i) {
+                if (i == 0) str += to_string(vec[i]);
+                else {
+                    str += "->";
+                    str += to_string(vec[i]);
+                };
+            }
+            ans.push_back(str);
+            return;
+        }
+        if (root->left) {
+            recur257_0(root->left);
+            vec.pop_back();
+        }
+        if (root->right) {
+            recur257_0(root->right);
+            vec.pop_back();
+        }
+    }
+    vector<string> solution257_0(TreeNode* root) {
+        recur257_0(root);
+        return ans;
+    }
+};
+
+
+void recur257_0(TreeNode* root, vector<int> &path, vector<string> &ans) {
+    //每一次循环，参数分别是子节点，当前子节点路径，和一个全局容器的引用
+    path.push_back(root->val);
+    if (!(root->left || root->right)) {
+        int size = path.size();
+        string str;
+        for (int i = 0; i < size; ++ i) {
+            if (i == 0) str += to_string(path[i]);
+            else {
+                str += "->";
+                str += to_string(path[i]);
+            };
+        }
+        ans.push_back(str);
+        return ;
+    }
+    if (root->left) {
+        recur257_0(root->left, path, ans);
+        path.pop_back();
+    }
+    if (root->right) {
+        recur257_0(root->right, path, ans);
+        path.pop_back();
+    }
+}
+vector<string> solution257_0(TreeNode* root) {
+    vector<string> ans;
+    vector<int> path;
+    recur257_0(root, path, ans);
+    return ans;
+}
+
+void recur257_1(TreeNode* root, string path, vector<string> &ans) {
+    //每一次循环，参数分别是子节点，当前子节点字符串路径，和一个全局容器的引用
+    path += to_string(root->val);
+    if (!(root->left || root->right)) {
+        ans.push_back(path);
+        return ;
+    }
+    if (root->left) recur257_1(root->left, path + "->", ans);
+    if (root->right) recur257_1(root->right, path + "->", ans);
+}
+vector<string> solution257_1(TreeNode* root) {
+    vector<string> ans;
+    string path;
+    
+    recur257_1(root, path, ans);
+    return ans;
+}

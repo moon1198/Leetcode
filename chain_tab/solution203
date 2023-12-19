@@ -1,0 +1,101 @@
+#ifndef CHAIN_TAB
+#define CHAIN_TAB
+#include "ListNode"
+
+
+class chain_tab{
+public:
+    
+    chain_tab () = default;
+    chain_tab (std::string a) :str(a){};
+    int print(){
+        std::cout << "hello world" << std::endl;
+        return 0;
+    }
+    void test();
+    ListNode *solution203_0(ListNode *head, int val);
+    ListNode *solution203_1(ListNode *head, int val);
+    ListNode* solution206_0(ListNode* head);
+    ListNode* solution206_1(ListNode* head);
+private:
+    std::string str;
+};
+
+
+void chain_tab::test(){
+    std::cout << str << std::endl;
+}
+
+ListNode *chain_tab::solution203_0(ListNode *head, int val){
+    ListNode *vhead = new ListNode(0);
+    ListNode *cur = nullptr;
+    vhead->next = head;
+    cur = vhead;
+    while (cur->next != nullptr){
+        if (cur->next->val == val){
+            cur->next = cur->next->next;
+        }else{
+            cur = cur->next;
+        }
+    }
+    return vhead->next;
+}
+ListNode *chain_tab::solution203_1(ListNode *head, int val){
+    while (head != nullptr && head->val == val){
+        head = head->next;
+    }
+    if (head == nullptr) {return head;}
+    ListNode *cur = head;
+    while (cur->next != nullptr){
+        if (cur->next->val == val){
+            cur->next = cur->next->next;
+        }else{
+            cur = cur->next;
+        }
+    }
+    return head;
+}
+
+ListNode* chain_tab::solution206_0(ListNode* head) {
+    ListNode* cur = head;
+    ListNode* pre = nullptr;
+    while (cur != nullptr) {
+        ListNode* nxt = cur->next;
+        cur->next = pre;
+        pre = cur;
+        cur = nxt;
+    }
+    return pre;
+}
+
+ListNode *recur (ListNode *pre, ListNode *cur ){
+    if (!cur) return pre;
+    ListNode *nxt = cur->next;
+    cur->next = pre;
+    pre = cur;
+    cur = nxt;
+    return recur(pre, nxt);
+}
+
+ListNode *recur2 (ListNode *cur){
+    //边缘条件判断
+    if (cur == nullptr) return nullptr;
+    if (cur->next) {
+        //last在递归最里层被确定，然后不做修改，向外层传递
+        ListNode *last = recur2(cur->next);
+        //反向处理节点，使其下一个节点指向自己，自己指向nullptr
+        cur->next->next = cur;
+        cur->next = nullptr;
+        return last;
+    }else {
+        return cur;
+    }
+}
+
+ListNode* chain_tab::solution206_1(ListNode* head) {
+    //尾递归， 可由迭代代替
+    //return recur(nullptr, head);
+    return recur2(head);
+}
+
+#endif

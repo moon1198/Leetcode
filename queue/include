@@ -1,0 +1,7 @@
+#include "solution232"
+bool solution20_0(string s);
+string solution1047_0(string s);
+string solution1047_1(string s);
+int solution150_0(vector<string>& tokens);
+vector<int> solution239_0(vector<int>& nums, int k);
+vector<int> solution347_0(vector<int>& nums, int k);
