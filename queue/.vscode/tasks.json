@@ -10,7 +10,8 @@
                 "-Wall",
                 "-Werror",
                 // "-fsanitize=address",
-                "${workspaceFolder}/*.cpp",
+                // "${workspaceFolder}/*.cpp",
+                "${fileDirname}/*.cpp",
                 
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
