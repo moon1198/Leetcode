@@ -9,9 +9,9 @@
                 "-g",
                 "-Wall",
                 "-Werror",
-                // "${workspaceFolder}/*.cpp",
-                "*.cpp",
-                // "${fileDirname}/*.cpp",
+                // "${workspaceFolder}\\*.cpp",
+                // "*.cpp",
+                "${fileDirname}\\*.cpp",
                 "-o",
                 // "${fileDirname}\\${fileBasenameNoExtension}.exe"
                 "${fileDirname}\\main.exe"
