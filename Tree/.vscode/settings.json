@@ -51,7 +51,8 @@
         "treenode": "cpp",
         "node1": "cpp",
         "solution257": "cpp",
-        "queue": "cpp"
+        "queue": "cpp",
+        "set": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }

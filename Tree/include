@@ -7,6 +7,10 @@ TreeNode* solution106_1(vector<int>& inorder, vector<int>& postorder);
 TreeNode* solution105_0(vector<int>& preorder, vector<int>& inorder);
 TreeNode* solution654_0(vector<int>& nums);
 
+TreeNode *solution236_0(TreeNode *root, TreeNode *p, TreeNode *q);
+TreeNode *solution236_1(TreeNode *root, TreeNode *p, TreeNode *q);
+TreeNode *solution235_0(TreeNode *root, TreeNode *p, TreeNode *q);
+
 
 
 void fcn3();
