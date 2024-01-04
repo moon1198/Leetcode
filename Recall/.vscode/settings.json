@@ -52,7 +52,8 @@
         "node1": "cpp",
         "solution257": "cpp",
         "queue": "cpp",
-        "set": "cpp"
+        "set": "cpp",
+        "map": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
