@@ -7,7 +7,7 @@
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
-                "-Wall",
+                // "-Wall",
                 "-Werror",
                 // "-fsanitize=address",
                 "${workspaceFolder}/*.cpp",

@@ -20,7 +20,7 @@ bool recur45_0(vector<int> &nums, int loc) {
     }
     return false;
 }
-
+//bad implementation
 int solution45_0(vector<int> &nums) {
     recur45_0(nums, 0);
     return counts;
@@ -28,7 +28,7 @@ int solution45_0(vector<int> &nums) {
 
 int solution45_1(vector<int> &nums) {
     int len = nums.size();
-    if (len = 1) return 0;
+    if (len == 1) return 0;
     int base = 0;
     int loc = nums[0];
     int counts = 1;
@@ -46,5 +46,20 @@ int solution45_1(vector<int> &nums) {
         ++ counts;
     }
 
+    return counts;
+}
+
+int solution45_2(vector<int> &nums) {
+    int len = nums.size();
+    int cur_end = 0;
+    int next_end = nums[0];
+    int counts = 0;
+    for (int i = 0; i < len - 1; ++ i) {
+        next_end = i + nums[i] > next_end ? i + nums[i] : next_end;
+        if (i == cur_end) {
+            cur_end = next_end;
+            ++ counts;
+        }
+    }
     return counts;
 }
