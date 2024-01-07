@@ -1,6 +1,6 @@
 #include "include.h"
 int main() {
-    vector<int> ratings = {1,6,10,8,7,3,2};
-    solution135_0(ratings);
+    vector<vector<int>> people = {{7,0},{4,4},{7,1},{5,0},{6,1},{5,2}};
+    solution406_0(people);
     return 0;
 }
