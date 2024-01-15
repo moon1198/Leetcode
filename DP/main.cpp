@@ -1,6 +1,7 @@
 #include "include.h"
 
 int main () {
-    cout << solution70_0(44) << endl;
+    vector<vector<int>> obstacleGrid = {{0,0,0},{0,1,0},{0,0,0}};
+    solution343_0(10);
     return 0;
 }
