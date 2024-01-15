@@ -10,3 +10,7 @@ using namespace std;
 int solution70_0(int n);
 int solution63_0(vector<vector<int>> &obstacleGrid);
 int solution343_0(int n);
+
+bool solution416_0(vector<int> &nums);
+int solution1049_0(vector<int> &stones);
+int solution494_0(vector<int> &nums, int target);

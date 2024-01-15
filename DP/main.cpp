@@ -1,7 +1,7 @@
 #include "include.h"
 
 int main () {
-    vector<vector<int>> obstacleGrid = {{0,0,0},{0,1,0},{0,0,0}};
-    solution343_0(10);
+    vector<int> nums = {1,0};
+    solution494_0(nums,1);
     return 0;
 }
