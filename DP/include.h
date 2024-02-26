@@ -17,3 +17,6 @@ int solution494_0(vector<int> &nums, int target);
 int solution518_0(int amount, vector<int> &coins);
 int solution518_1(int amount, vector<int> &coins);
 int solution518_2(int amount, vector<int> &coins);
+
+int solution377_0(vector<int>& nums, int target);
+int kama57_0();
