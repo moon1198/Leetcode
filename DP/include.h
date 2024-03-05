@@ -22,3 +22,8 @@ int solution377_0(vector<int>& nums, int target);
 int kama57_0();
 int solution213_0(vector<int>& nums);
 int solution123_0(vector<int>& prices);
+int solution300_0(vector<int>& nums);
+
+int solution718_0(vector<int>& nums1, vector<int>& nums2);
+int solution1143_0(string text1, string text2);
+

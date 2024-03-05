@@ -16,7 +16,7 @@ int solution122_0(vector<int>& prices) {
     return dp.back();
 }
 
-int solution122_0(vector<int>& prices) {
+int solution122_1(vector<int>& prices) {
     vector<vector<int>> dp(prices.size(), vector<int>(2, 0));
     //0:持有状态， 1：非持有状态
 

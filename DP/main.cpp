@@ -3,7 +3,10 @@
 
 int main () {
 
-    vector<int> nums = {3,3,5,0,0,3,1,4};
-    solution123_0(nums);
+    vector<int> nums1 = {0,0,0,0,0};
+    vector<int> nums2 = {0,0,0,0,0};
+    string text1 = "abcde";
+    string text2 = "ace";
+    solution1143_0(text1, text2);
     return 0;
 }
