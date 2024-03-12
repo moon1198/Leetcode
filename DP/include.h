@@ -26,4 +26,5 @@ int solution300_0(vector<int>& nums);
 
 int solution718_0(vector<int>& nums1, vector<int>& nums2);
 int solution1143_0(string text1, string text2);
+int less_num (string str1);
 

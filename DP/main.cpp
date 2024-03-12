@@ -7,6 +7,8 @@ int main () {
     vector<int> nums2 = {0,0,0,0,0};
     string text1 = "abcde";
     string text2 = "ace";
-    solution1143_0(text1, text2);
+    string str1 = "210102";
+
+    less_num(str1);
     return 0;
 }
