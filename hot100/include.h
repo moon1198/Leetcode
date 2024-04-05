@@ -8,3 +8,4 @@ vector<int> spiralOrder(vector<vector<int>>& matrix);
 
 vector<string> letterCombinations(string digits);
 vector<string> generateParenthesis(int n);
+int bar();

@@ -11,5 +11,6 @@ int main() {
             cout << "1" << endl;
         }
     }
+    bar();
     return 0;
 }
