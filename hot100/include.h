@@ -9,3 +9,4 @@ vector<int> spiralOrder(vector<vector<int>>& matrix);
 vector<string> letterCombinations(string digits);
 vector<string> generateParenthesis(int n);
 int bar();
+int searchInsert(vector<int>& nums, int target);

@@ -1,57 +1,64 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+const int MOD = 998244353;
+
+typedef struct{
+    int dp[5][5][5][5];
+}dp_t;
+dp_t dp_cur = {0};
 
 int bar() {
-    int n, m;
+    //以最高位为首位
+    int n ,m;
     cin >> n >> m;
-    int cnt = 0;
-    int dp[n + 1][m + 1] = {};
-    for (int i = 1; i < m + 1; ++ i) {
-        if (i % 2 == 1) {
-            dp[1][i] = 1;
-        } else {
-            dp[1][i] = 0;
-        }
-    }
-    for (int i = 2; i < n + 1; ++ i) {
-        for (int j = 1; j < m + 1; ++ j) {
-            int tmp = 0;
-            if (i % 2 == 0) {
-                // if (i == n) {
-                //     for (int k = 1; k < 5; ++ k) {
-                //         if (j - k * 2 >= 0) {
-                //             tmp += dp[i - 1][j - 2 * k];
-                //         }
-                //     }
-                // } else {
-                    for (int k = 0; k < 5; ++ k) {
-                        if (j - k * 2 >= 0) {
-                            tmp += dp[i - 1][j - 2 * k];
-                        }
-                    }
-                // }
-            } else {
-                for (int k = 0; k < 5; ++ k) {
-                    if (j - k * 2 - 1 >= 0) {
-                        tmp += dp[i - 1][j - 2 * k - 1];
+
+    //init dp
+    for (int a = 0; a < 5; ++ a) {
+        for (int b = 0; b < 5; ++ b) {
+            for (int c = 0; c < 5; ++ c) {
+                for (int d = 0; d < 5; ++ d) {
+                    int pre_val = 2 * (a + b + c + d) + 2;
+                    if (pre_val <= m) {
+                        dp_cur.dp[a][b][c][d] = 1;
+                    } else {
+
                     }
                 }
             }
-            dp[i][j] = tmp;
         }
     }
-    int ans = 0; 
-    if (n % 2 == 1) {
-        ans = dp[m][n];
-    } else {
-        for (int k = 1; k < 5; ++ k) {
-            if (m - k * 2 >= 0) {
-                ans += dp[n - 1][m - 2 * k];
+
+    //
+    for (int i = 5; i <= n; ++ i) {
+        dp_t dp_tmp = {0};
+        for (int a = 0; a < 5; ++ a) {
+            for (int b = 0; b < 5; ++ b) {
+                for (int c = 0; c < 5; ++ c) {
+                    for (int d = 0; d < 5; ++ d) {
+                        int pre_val = 2 * (a + b + c + d) + 2;
+                        for (int j = 0; j < 5; ++ j) {
+                            int cur_val = j * 2 + (i % 2);
+                            if (pre_val + cur_val <= m) {
+                                dp_tmp.dp[b][c][d][j] += dp_cur.dp[a][b][c][d];
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        dp_cur = dp_tmp;
+    }
+    int sum = 0;
+    for (int a = 0; a < 5; ++ a) {
+        for (int b = 0; b < 5; ++ b) {
+            for (int c = 0; c < 5; ++ c) {
+                for (int d = 0; d < 5; ++ d) {
+                    sum += dp_cur.dp[a][b][c][d];
+                }
             }
         }
     }
-    cout << ans % 998244353 << endl;
-
+    cout << sum % MOD << endl;
     return 0;
 }
