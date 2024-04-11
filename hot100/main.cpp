@@ -14,8 +14,6 @@ int main() {
     }
     // bar();
     s = "3[a]2[bc]";
-    decodeString(s);
-
 
     return 0;
 }
