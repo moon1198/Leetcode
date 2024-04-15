@@ -15,3 +15,5 @@ vector<int> searchRange(vector<int>& nums, int target);
 double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2);
 
 string decodeString(string s);
+vector<int> quick_sort(vector<int> nums);
+int jump(vector<int>& nums);
