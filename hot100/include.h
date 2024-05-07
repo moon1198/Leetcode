@@ -17,3 +17,6 @@ double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2);
 string decodeString(string s);
 vector<int> quick_sort(vector<int> nums);
 int jump(vector<int>& nums);
+int coinChange(vector<int>& coins, int amount);
+bool wordBreak(string s, vector<string>& wordDict); 
+int minimumOperations(vector<vector<int>>& grid);

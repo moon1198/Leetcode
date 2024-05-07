@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int search(vector<int>& nums, int target) {
+int search0(vector<int>& nums, int target) {
 
     int base;
     if (nums.size() == 1) {
@@ -28,4 +28,38 @@ int search(vector<int>& nums, int target) {
     }
     
     return -1;
+}
+
+int search(vector<int>& nums, int target) {
+    int l = 0, r = nums.size() - 1;
+    int base = nums[0];
+    int m = 0;
+    if (target >= nums[0]) {
+        while (l <= r) {
+            m = (l + r) / 2;
+            if (nums[m] == target) {
+                break;
+            }else if (nums[m] < target && nums[m] >= base){
+                l = m + 1;
+            } else {
+                r = m - 1;
+            }
+        }
+    } else {
+        //在后半
+        while (l <= r) {
+            m = (l + r) / 2;
+            if (nums[m] == target) {
+                break;
+            } else if (nums[m] > target && nums[m] < base) {
+                r = m - 1;
+            } else {
+                l = m + 1;
+            }
+        }
+    }
+    if (l > r) {
+        return -1;
+    }
+    return m;
 }
