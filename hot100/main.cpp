@@ -6,7 +6,8 @@ int main() {
     vector<int> nums1 = {3,2,3,1,2,4,5,5,6};
     vector<int> nums2 = {2};
     
-    vector<int> coins = {2, 5, 10, 1};
+    vector<int> nums = {100};
+    //vector<int> nums = {14,9,8,4,3,2};
     int amount = 27;
 
     string s = "catsandog";
