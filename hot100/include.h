@@ -21,3 +21,4 @@ int coinChange(vector<int>& coins, int amount);
 bool wordBreak(string s, vector<string>& wordDict); 
 int minimumOperations(vector<vector<int>>& grid);
 bool canPartition(vector<int>& nums);
+void nextPermutation(vector<int>& nums);
