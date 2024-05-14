@@ -6,14 +6,18 @@ int main() {
     vector<int> nums1 = {3,2,3,1,2,4,5,5,6};
     vector<int> nums2 = {2};
     
-    vector<int> nums = {1, 2, 3};
+    vector<int> nums = {1, 0, 2};
     //vector<int> nums = {14,9,8,4,3,2};
     int amount = 27;
 
-    string s = "catsandog";
     //vector<string> wordDict = {"cats","dog","sand","and","cat"};
     vector<string> wordDict = {"apple","pen"};
-    vector<vector<int>> grid{{4,5,0,1},{1,9,0,8},{2,2,5,3},{2,0,9,3}};
+    vector<vector<int>> grid = {{9,5,7,3},{8,9,6,1},{6,7,14,3},{2,5,3,1}};
+
+
+    string s = "fabccddg";
+
 
     return 0;
+
 }

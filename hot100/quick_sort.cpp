@@ -1,54 +1,40 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<int> merge(vector<int> a, vector<int> b) {
-    if (a.empty()) {
-        return b;
-    } else if (b.empty()) {
-        return a;
+
+void recur(vector<int>& nums, int l, int r) {
+    if (l > r) {
+        return ;
     }
-    vector<int> ans;
-    int idx1 = 0, idx2 = 0;
-    while (idx1 < a.size() && idx2 < b.size()) {
-        if (a[idx1] < b[idx2]) {
-            ans.push_back(a[idx1]);
-            ++ idx1;
+    int tmp = nums[l];
+    int t1 = l, t2 = r;
+    bool flag = false;
+    while (t1 != t2) {
+        if (!flag) {
+            if (nums[t2] > tmp) {
+                -- t2;
+            } else {
+                nums[t1] = nums[t2];
+                ++ t1;
+                flag = true;
+            }
         } else {
-            ans.push_back(b[idx2]);
-            ++ idx2;
+            if (nums[t1] < tmp) {
+                ++ t1;
+            } else {
+                nums[t2] = nums[t1];
+                -- t2;
+                flag = false;
+            }
         }
     }
-    if (idx1 == a.size()) {
-        while (idx2 < b.size()) {
-            ans.push_back(b[idx2]);
-            ++ idx2;
-        }
-    } else {
-        while (idx1 < a.size()) {
-            ans.push_back(a[idx1]);
-            ++ idx1;
-        }
-    }
-    return ans;
+    nums[t1] = tmp;
+    recur(nums, l, t1 - 1);
+    recur(nums, t1 + 1, r);
 }
 
-vector<int> fen(vector<int> &nums, int l, int r) {
-    vector<int> ans;
-    if (r - l == 0) {
-        return ans;
-    }
-    if (r - l == 1) {
-        ans.push_back(nums[l]);
-        return ans;
-    }
-    int m = l + ((r - l) >> 1);
-    vector<int> left = fen(nums, l, m);
-    vector<int> right = fen(nums, m, r);
-    return merge(left, right);
-}
-
-vector<int> quick_sort(vector<int> nums) {
-
-    int l = 0, r = nums.size();
-    return fen(nums, l, r);
+vector<int> quick_sort(vector<int>& nums) {
+    int n = nums.size();
+    recur(nums, 0, n - 1);
+    return nums;
 }
