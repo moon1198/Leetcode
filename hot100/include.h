@@ -31,3 +31,7 @@ int maximumEnergy(vector<int>& energy, int k);
 
 int maxScore(vector<vector<int>>& grid);
 vector<int> findPermutation(vector<int>& nums);
+int maxProfitAssignment(vector<int>& difficulty, vector<int>& profit, vector<int>& worker);
+long long sumDigitDifferences(vector<int>& nums);
+int longestAwesome(string s);
+int longestValidParentheses(string s);
