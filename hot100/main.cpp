@@ -6,7 +6,7 @@ int main() {
     vector<int> nums1 = {66,1,28,73,53,35,45,60,100,44,59,94,27,88,7,18,83,18,72,63};
     vector<int> nums2 = {66,20,84,81,56,40,37,82,53,45,43,96,67,27,12,54,98,19,47,77};
     
-    vector<int> nums = {824,843,837,620,836,234,276,859};
+    vector<int> nums = {1,1,2,2,1,1};
     //vector<int> nums = {14,9,8,4,3,2};
     int amount = 27;
 
@@ -20,8 +20,8 @@ int main() {
     priority_queue<int, vector<int>, greater<int>> qe;
 
 
-    longestValidParentheses(s);
 
+    gcdOfStrings("ABCABC", "ABC");
     return 0;
 
 }

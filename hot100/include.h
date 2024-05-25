@@ -35,3 +35,7 @@ int maxProfitAssignment(vector<int>& difficulty, vector<int>& profit, vector<int
 long long sumDigitDifferences(vector<int>& nums);
 int longestAwesome(string s);
 int longestValidParentheses(string s);
+int longestEqualSubarray(vector<int>& nums, int k);
+int minDistance(string word1, string word2);
+string mergeAlternately(string word1, string word2);
+string gcdOfStrings(string str1, string str2);
